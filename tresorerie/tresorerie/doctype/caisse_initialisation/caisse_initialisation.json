@@ -1,0 +1,279 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{YY}{caisse}{MM}{###}",
+ "creation": "2022-12-12 15:07:27.790124",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "societe",
+  "caisse",
+  "libelle",
+  "date_initialisation",
+  "initialisation",
+  "column_break_4",
+  "site",
+  "status",
+  "devise",
+  "date_fermeture",
+  "cours",
+  "section_break_9",
+  "solde_initial",
+  "column_break_11",
+  "solde_final",
+  "amended_from",
+  "billetage_section",
+  "billetage",
+  "total",
+  "compte",
+  "journal",
+  "solde_plancher",
+  "delta_plancher",
+  "type_caisse"
+ ],
+ "fields": [
+  {
+   "fieldname": "caisse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Caisse",
+   "options": "Caisse"
+  },
+  {
+   "fetch_from": "caisse.devise",
+   "fieldname": "devise",
+   "fieldtype": "Link",
+   "label": "Devise",
+   "options": "Devise"
+  },
+  {
+   "fieldname": "solde_initial",
+   "fieldtype": "Currency",
+   "label": "Solde Initial",
+   "options": "devise",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cours",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Cours"
+  },
+  {
+   "fieldname": "solde_final",
+   "fieldtype": "Currency",
+   "label": "Solde Final",
+   "options": "devise",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Caisse Initialisation",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "caisse.designation",
+   "fieldname": "libelle",
+   "fieldtype": "Data",
+   "label": "D\u00e9signation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date_initialisation",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Date Initialisation"
+  },
+  {
+   "fieldname": "date_fermeture",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Date Fermeture",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "billetage_section",
+   "fieldtype": "Tab Break",
+   "label": "Ferm\u00e9ture"
+  },
+  {
+   "fieldname": "billetage",
+   "fieldtype": "Table",
+   "label": "Billetage",
+   "options": "Billetage"
+  },
+  {
+   "default": "0",
+   "fieldname": "initialisation",
+   "fieldtype": "Check",
+   "label": "Initialisation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Float",
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "caisse.compte_comptable",
+   "fieldname": "compte",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Compte"
+  },
+  {
+   "fetch_from": "caisse.code_journal",
+   "fieldname": "journal",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Journal"
+  },
+  {
+   "fetch_from": "caisse.societe",
+   "fieldname": "societe",
+   "fieldtype": "Link",
+   "label": "Societe",
+   "options": "Societe",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "caisse.site",
+   "fieldname": "site",
+   "fieldtype": "Link",
+   "label": "Site",
+   "options": "Branch",
+   "read_only": 1
+  },
+  {
+   "default": "Vert",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Vert\nJaune\nRouge",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "caisse.solde_plancher",
+   "fieldname": "solde_plancher",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Solde Plancher"
+  },
+  {
+   "fetch_from": "caisse.delta_plancher",
+   "fieldname": "delta_plancher",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Delta Plancher"
+  },
+  {
+   "fetch_from": "caisse.type_caisse",
+   "fieldname": "type_caisse",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Type Caisse"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-03-28 06:29:17.568931",
+ "modified_by": "Administrator",
+ "module": "Tresorerie",
+ "name": "Caisse Initialisation",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Treso  Admin",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Caissier",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Caisse Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "caisse",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Green",
+   "title": "Vert"
+  },
+  {
+   "color": "Yellow",
+   "title": "Jaune"
+  },
+  {
+   "color": "Red",
+   "title": "Rouge"
+  }
+ ]
+}
